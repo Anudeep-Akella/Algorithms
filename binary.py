@@ -25,6 +25,17 @@ def insert_elements():                      #A functio for inserting elements in
 
     return container
 
+def extend_list():
+    arr_elements = int(input("Enter the number of elements you want to extend the array: "))
+
+    container = []
+    for i in range(arr_elements):
+        container.append(int(input(f"Enter the element at index[{i}]: ")))
+
+    return container
+
+
+
 def main():                                 #Main  Functionn that gives different options to the user
 
     my_list=[]
@@ -33,10 +44,11 @@ def main():                                 #Main  Functionn that gives differen
         print("\nThe Operations present in the program")
         print("1. Search")
         print("2. Inserting Elements")
-        print("3. list of elements")
-        print("4. Exit")
+        print("3. Extend the elements in the list")
+        print("4. list of elements")
+        print("5. Exit")
     
-        choice = input("Enter the choice between(1,2,3 or 4): ")
+        choice = input("Enter the choice: ")
 
         match choice:
             case '1':
@@ -47,8 +59,10 @@ def main():                                 #Main  Functionn that gives differen
             case '2':
                 my_list=insert_elements()
             case '3':
-                print(f"The list of elements are:{my_list}")
+                my_list.extend(extend_list())
             case '4':
+                print(f"The Elements inside the list are:{my_list}")
+            case '5':
                 print("Exiting the program. Goodbye!")
                 break
             case '_':
