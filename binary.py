@@ -1,4 +1,3 @@
-
 def binary(arr):        #Function to search an element
     element = int(input("Enter the number to seach: "))
     low = 0
@@ -33,8 +32,6 @@ def extend_list():
         container.append(int(input(f"Enter the element at index[{i}]: ")))
 
     return container
-
-
 
 def main():                                 #Main  Functionn that gives different options to the user
 
