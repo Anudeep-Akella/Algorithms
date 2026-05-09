@@ -1,4 +1,5 @@
 def binary(arr):        #Function to search an element
+    """ Funtion that searches the element the user wants to search"""
     element = int(input("Enter the number to seach: "))
     low = 0
     high = len(arr)-1
@@ -15,7 +16,8 @@ def binary(arr):        #Function to search an element
     else:
         return "Element not found!"
 
-def insert_elements():                      #A functio for inserting elements into a list for searching
+def insert_elements():                      #A function for inserting elements into a list for searching
+    """Function takes the user input of numbers for storing them in a list"""
     arr_elements = int(input("Enter the number of elements you want to enter in the array: "))
 
     container = []
@@ -25,6 +27,7 @@ def insert_elements():                      #A functio for inserting elements in
     return container
 
 def extend_list():
+    """ For extending the list if the list is present otherwise it just extends the original list """
     arr_elements = int(input("Enter the number of elements you want to extend the array: "))
 
     container = []
@@ -52,11 +55,15 @@ def main():                                 #Main  Functionn that gives differen
                 if not my_list:
                     print("Enter the elements first by choosing the 2 option")
                 else:
+                    my_list.sort()
                     print(binary(my_list))
             case '2':
                 my_list=insert_elements()
             case '3':
-                my_list.extend(extend_list())
+                if not my_list:
+                    my_list = insert_elements()
+                else:
+                    my_list.extend(extend_list())
             case '4':
                 print(f"The Elements inside the list are:{my_list}")
             case '5':
